@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Passage Power — Marine Electronics and Offgrid Solutions</title>
+<meta name="description" content="Passage Power: marine electronics and offgrid power solutions. Lithium battery retrofits, inverter installs, solar, wind and hydro generation, and complex problem solving for offshore vessels.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f4edda;
+    --cream-deep:#e9dfc4;
+    --navy:#1b2f4b;
+    --navy-deep:#12233a;
+    --amber:#c9962e;
+    --ink-soft:#3a4a63;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--cream);
+    color:var(--navy);
+    font-family:'Lora',Georgia,serif;
+    font-size:17px;line-height:1.7;
+    background-image:radial-gradient(ellipse at 20% 10%, rgba(201,150,46,.05), transparent 60%),
+                     radial-gradient(ellipse at 85% 90%, rgba(27,47,75,.05), transparent 55%);
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  header.site{
+    border-bottom:3px double var(--navy);
+    padding:18px 0;
+    position:sticky;top:0;background:rgba(244,237,218,.96);z-index:50;
+  }
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--navy)}
+  .brand img{width:54px;height:54px;border-radius:50%;border:2px solid var(--navy)}
+  .brand .name{font-family:'Playfair Display',serif;font-weight:900;letter-spacing:.14em;font-size:20px}
+  .brand .sub{display:block;font-family:'Lora',serif;font-weight:400;letter-spacing:.22em;font-size:10px;color:var(--ink-soft)}
+  nav a{color:var(--navy);text-decoration:none;margin-left:26px;letter-spacing:.12em;font-size:13px;font-weight:600;text-transform:uppercase}
+  nav a:hover{color:var(--amber)}
+  .hero{text-align:center;padding:84px 24px 64px}
+  .hero img.badge{width:min(380px,72vw);height:auto;filter:drop-shadow(0 10px 24px rgba(27,47,75,.18))}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(38px,6vw,64px);letter-spacing:.1em;margin:34px 0 8px}
+  .hero .tagline{font-style:italic;font-size:clamp(17px,2.4vw,22px);color:var(--ink-soft);letter-spacing:.04em}
+  .rule{display:flex;align-items:center;gap:14px;justify-content:center;margin:34px auto;max-width:520px;color:var(--amber)}
+  .rule::before,.rule::after{content:"";height:1px;flex:1;background:var(--navy);opacity:.55}
+  .rule span{font-size:20px}
+  .lede{max-width:640px;margin:0 auto;font-size:19px}
+  .btn{display:inline-block;margin-top:28px;padding:14px 38px;border:2px solid var(--navy);color:var(--navy);
+       text-decoration:none;letter-spacing:.18em;font-size:14px;font-weight:600;text-transform:uppercase;
+       transition:all .25s;background:transparent}
+  .btn:hover{background:var(--navy);color:var(--cream)}
+  section{padding:72px 0}
+  section.dark{background:var(--navy-deep);color:var(--cream)}
+  section.dark .kicker{color:var(--amber)}
+  .kicker{text-align:center;letter-spacing:.3em;font-size:13px;font-weight:600;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+  h2.sec{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(28px,4vw,40px);text-align:center;letter-spacing:.08em;margin-bottom:8px}
+  .sec-sub{text-align:center;font-style:italic;color:var(--ink-soft);margin-bottom:44px}
+  section.dark .sec-sub{color:#c9bfa4}
+  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+  .card{border:1px solid rgba(27,47,75,.35);padding:28px 26px;background:rgba(255,255,255,.28);transition:transform .2s}
+  .card:hover{transform:translateY(-4px)}
+  section.dark .card{border-color:rgba(244,237,218,.3);background:rgba(255,255,255,.04)}
+  .card h3{font-family:'Playfair Display',serif;font-size:20px;letter-spacing:.04em;margin-bottom:8px}
+  .card h3 .n{color:var(--amber);margin-right:8px;font-size:16px}
+  .card p{font-size:15px;color:var(--ink-soft)}
+  section.dark .card p{color:#c9bfa4}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+  figure{margin:0;border:1px solid rgba(27,47,75,.35);background:#fff;padding:10px}
+  figure img{width:100%;height:220px;object-fit:cover;display:block;filter:sepia(.18)}
+  figcaption{padding:12px 4px 6px;font-size:14px;font-style:italic;color:var(--ink-soft);text-align:center}
+  .about{display:grid;grid-template-columns:1fr;gap:26px;max-width:720px;margin:0 auto;text-align:center}
+  .about img.mark{width:120px;margin:0 auto;opacity:.9}
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;max-width:860px;margin:0 auto;text-align:center}
+  .contact-grid a{color:var(--cream);text-decoration:none;border:1px solid rgba(244,237,218,.35);padding:26px 18px;display:block;transition:all .25s}
+  .contact-grid a:hover{border-color:var(--amber);transform:translateY(-3px)}
+  .contact-grid .label{display:block;letter-spacing:.24em;font-size:11px;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
+  .contact-grid .value{font-family:'Playfair Display',serif;font-size:21px;letter-spacing:.03em}
+  footer{border-top:3px double var(--navy);padding:28px 0;text-align:center;font-size:13px;letter-spacing:.14em;color:var(--ink-soft);text-transform:uppercase}
+  footer .mark{font-family:'Playfair Display',serif;font-weight:900;letter-spacing:.2em;font-size:15px;color:var(--navy);display:block;margin-bottom:8px}
+  @media(max-width:640px){nav{display:none}.hero{padding:56px 20px 44px}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="images/icon.webp" alt="Passage Power wave mark">
+      <span class="name">PASSAGE POWER<span class="sub">MARINE ELECTRONICS · OFFGRID SOLUTIONS</span></span>
+    </a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero wrap" id="top">
+  <img class="badge" src="images/badge.webp" alt="Passage Power badge — marine electronics and offgrid solutions">
+  <h1>PASSAGE POWER</h1>
+  <p class="tagline">Marine electronics and offgrid solutions, for vessels headed far from shore.</p>
+  <div class="rule"><span>✦</span></div>
+  <p class="lede">From lithium battery retrofits to full off-grid power design — solar, wind, hydro, and the electronics to manage it all. Installed right, built to last, ready for the next passage.</p>
+  <a class="btn" href="#contact">Get in touch</a>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <p class="kicker">What we do</p>
+    <h2 class="sec">SERVICES</h2>
+    <p class="sec-sub">Power and electronics for offshore-capable vessels.</p>
+    <div class="services">
+      <div class="card"><h3><span class="n">✦</span>Lithium Battery Retrofits</h3><p>Drop-in and fully engineered LiFePO4 conversions — sizing, BMS integration, fusing, and wiring done to marine standards.</p></div>
+      <div class="card"><h3><span class="n">✦</span>Inverter Retrofits</h3><p>Inverter/charger upgrades (Victron and others) for clean, reliable AC power underway and at anchor.</p></div>
+      <div class="card"><h3><span class="n">✦</span>Solar Panel Integration</h3><p>Rigid and flexible arrays on arches, biminis, and decks — MPPT controllers sized and wired for real-world output.</p></div>
+      <div class="card"><h3><span class="n">✦</span>Wind Generator Installation</h3><p>Marine wind turbines mounted and wired for quiet, dependable charging on passage.</p></div>
+      <div class="card"><h3><span class="n">✦</span>Hydro Generator Installation</h3><p>Tow-behind and transom-mounted hydro generators for serious amp-hours on long passages.</p></div>
+      <div class="card"><h3><span class="n">✦</span>Alternator Regulator Upgrades</h3><p>External smart regulation so your engine actually finishes the charge — faster, fuller, safer.</p></div>
+      <div class="card"><h3><span class="n">✦</span>Generator Installation</h3><p>Marine generator installs and integration with new or existing power systems.</p></div>
+      <div class="card"><h3><span class="n">✦</span>Stray Current Evaluation</h3><p>Corrosion diagnosis: find the leaks, protect your underwater metals, stop the damage.</p></div>
+      <div class="card"><h3><span class="n">✦</span>Complex Problem Solving</h3><p>The weird electrical gremlins nobody else wants to touch. Systematic diagnosis, honest answers.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="dark">
+  <div class="wrap">
+    <p class="kicker">Recent work</p>
+    <h2 class="sec">ON BOARD</h2>
+    <p class="sec-sub">Real systems, installed right.</p>
+    <div class="gallery">
+      <figure><img src="images/inverter.webp" alt="Inverter/charger installation aboard a sailboat"><figcaption>Inverter/charger installation, clean bulkhead mount</figcaption></figure>
+      <figure><img src="images/batteries.webp" alt="Marine lithium battery bank"><figcaption>Lithium battery bank, fused and secured</figcaption></figure>
+      <figure><img src="images/solar.webp" alt="Solar panels on a sailboat stern arch"><figcaption>Solar array on stern arch</figcaption></figure>
+      <figure><img src="images/wind.webp" alt="Wind generator on a sailboat stern"><figcaption>Wind generator, ready for the trades</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <p class="kicker">Who's behind it</p>
+    <h2 class="sec">ABOUT</h2>
+    <div class="rule"><span>✦</span></div>
+    <div class="about">
+      <img class="mark" src="images/icon.webp" alt="Passage Power wave mark">
+      <p><strong>Troy Rank</strong> started Passage Power for one reason: boats headed offshore deserve power systems as serious as their passages. Years of hands-on marine electrical work — from battery retrofits to full off-grid refits — go into every installation.</p>
+      <p>No upsells, no guesswork. Just solid engineering, tidy wiring, and systems you can trust a thousand miles from shore.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="dark">
+  <div class="wrap">
+    <p class="kicker">Get underway</p>
+    <h2 class="sec">CONTACT</h2>
+    <p class="sec-sub">Tell us about your boat and your power goals.</p>
+    <div class="contact-grid">
+      <a href="tel:+15852001681"><span class="label">Telephone</span><span class="value">585.200.1681</span></a>
+      <a href="mailto:Troyrank@gmail.com"><span class="label">Email</span><span class="value">Troyrank@gmail.com</span></a>
+      <a href="https://passagepower.com"><span class="label">Website</span><span class="value">passagepower.com</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="mark">PASSAGE POWER</span>
+    Marine electronics and offgrid solutions · © 2026
+  </div>
+</footer>
+
+</body>
+</html>
